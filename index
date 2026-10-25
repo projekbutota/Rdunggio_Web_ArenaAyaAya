@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARENA AYA-AYA — Dashboard Inovasi & Profil Educator</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f5ff',
+              100: '#e0ebff',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              900: '#1e3a8a',
+            },
+            bgMain: '#F4F7FE'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F4F7FE;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+    .nav-item.active {
+      background-color: #EBF3FE;
+      color: #2563EB;
+      font-weight: 700;
+      border-right: 4px solid #2563EB;
+    }
+  </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col md:flex-row">
+
+  <!-- ================= SIDEBAR NAVIGASI KIRI ================= -->
+  <aside class="w-full md:w-64 bg-white border-r border-slate-200 flex-shrink-0 flex flex-col justify-between z-20">
+    <div>
+      <!-- Logo Brand -->
+      <div class="p-6 border-b border-slate-100 flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-xl shadow-md shadow-blue-200">
+          <i class="fa-solid fa-atom"></i>
+        </div>
+        <div>
+          <h1 class="font-extrabold text-slate-900 text-lg leading-none">ARENA AYA-AYA</h1>
+          <p class="text-xs text-blue-600 font-semibold mt-1">Kimia Interaktif AI</p>
+        </div>
+      </div>
+
+      <!-- Menu Utama -->
+      <nav class="p-4 space-y-1 text-sm font-medium text-slate-600">
+        <a href="#beranda" onclick="navTo('beranda')" id="nav-beranda" class="nav-item active flex items-center gap-3 px-4 py-3 rounded-xl transition hover:bg-slate-50">
+          <i class="fa-solid fa-house w-5 text-center text-lg"></i>
+          <span>Beranda</span>
+        </a>
+        <a href="#profil" onclick="navTo('profil')" id="nav-profil" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl transition hover:bg-slate-50">
+          <i class="fa-solid fa-user-graduate w-5 text-center text-lg"></i>
+          <span>Profil Educator</span>
+        </a>
+        <a href="#portofolio" onclick="navTo('portofolio')" id="nav-portofolio" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl transition hover:bg-slate-50">
+          <i class="fa-solid fa-file-pdf w-5 text-center text-lg"></i>
+          <span>Portofolio Utama</span>
+        </a>
+        <a href="#artefak" onclick="navTo('artefak')" id="nav-artefak" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl transition hover:bg-slate-50">
+          <i class="fa-solid fa-gamepad w-5 text-center text-lg"></i>
+          <span>Artefak AI (5 Game)</span>
+        </a>
+        <a href="#video" onclick="navTo('video')" id="nav-video" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl transition hover:bg-slate-50">
+          <i class="fa-solid fa-circle-play w-5 text-center text-lg"></i>
+          <span>Video Media</span>
+        </a>
+        <a href="#dokumen" onclick="navTo('dokumen')" id="nav-dokumen" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl transition hover:bg-slate-50">
+          <i class="fa-solid fa-folder-open w-5 text-center text-lg"></i>
+          <span>Dokumen Pendukung</span>
+        </a>
+        <a href="#dokumentasi" onclick="navTo('dokumentasi')" id="nav-dokumentasi" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl transition hover:bg-slate-50">
+          <i class="fa-solid fa-images w-5 text-center text-lg"></i>
+          <span>Dokumentasi Foto</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Widget Hub Live -->
+    <div class="p-4 m-4 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl text-white shadow-lg shadow-blue-200">
+      <div class="text-xs uppercase font-bold tracking-wider text-blue-200">Akses Langsung</div>
+      <div class="font-bold text-sm mt-1">Web Hub Game Live</div>
+      <p class="text-xs text-blue-100 mt-1">Uji 5 game interaktif langsung di server GitHub Pages.</p>
+      <a href="https://projekbutota.github.io/arena aya aya/" target="_blank" class="mt-3 inline-flex items-center justify-center gap-2 w-full py-2 bg-white text-blue-600 font-bold text-xs rounded-xl shadow hover:bg-blue-50 transition">
+        <i class="fa-solid fa-external-link"></i> Buka Web Hub
+      </a>
+    </div>
+  </aside>
+
+  <!-- ================= KONTEN UTAMA DENGAN HEADER ATAS ================= -->
+  <div class="flex-1 flex flex-col min-w-0">
+    
+    <!-- Top Header Bar -->
+    <header class="bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between sticky top-0 z-10 shadow-sm">
+      <div class="relative w-64 md:w-80">
+        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+        <input type="text" placeholder="Cari modul, video, artefak..." class="w-full pl-10 pr-4 py-2 bg-slate-100 border border-transparent rounded-xl text-xs focus:bg-white focus:border-blue-500 focus:outline-none transition">
+      </div>
+
+      <div class="flex items-center gap-4">
+        <button class="w-9 h-9 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center hover:bg-slate-200 transition relative">
+          <i class="fa-regular fa-bell text-sm"></i>
+          <span class="w-2 h-2 bg-blue-600 rounded-full absolute top-2 right-2"></span>
+        </button>
+        <button class="w-9 h-9 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center hover:bg-slate-200 transition">
+          <i class="fa-regular fa-comment-dots text-sm"></i>
+        </button>
+
+        <div class="flex items-center gap-3 pl-3 border-l border-slate-200">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-500 text-white flex items-center justify-center font-bold text-sm shadow-sm">
+            RD
+          </div>
+          <div class="hidden sm:block text-left">
+            <div class="text-xs font-bold text-slate-900">Rahman Dunggio, S.Pd.</div>
+            <div class="text-[10px] text-slate-500">Guru Kimia & KKA SMAN 1 Tibawa</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content Body Area -->
+    <main class="p-6 md:p-8 flex-1 overflow-y-auto custom-scrollbar">
+
+      <!-- ================= 1. SECTION BERANDA ================= -->
+      <section id="sec-beranda" class="space-y-6">
+        
+        <!-- Hero Banner Hook Utama + BADGE MICROSOFT CERTIFIED EDUCATOR (MCE) -->
+        <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 rounded-3xl p-6 md:p-8 text-white relative overflow-hidden shadow-xl shadow-blue-200 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          
+          <div class="max-w-2xl relative z-10">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="bg-white/20 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border border-white/20">
+                💡 Inovasi Pembelajaran Kimia
+              </span>
+              <span class="bg-amber-400 text-slate-900 text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+                Microsoft Certified Educator
+              </span>
+            </div>
+
+            <h2 class="text-2xl md:text-4xl font-extrabold mt-3 leading-tight">
+              Menapis Pemahaman Kimia melalui Game Interaktif Berbasis AI & IFP
+            </h2>
+            <p class="text-blue-100 text-xs md:text-sm mt-3 leading-relaxed">
+              Mengangkat kearifan lokal Gorontalo <strong>"AYA-AYA"</strong> (Ayakan) sebagai filosofi menapis pemahaman konsep Struktur Atom, Notasi Atom, dan Konfigurasi Elektron murid secara partisipatif.
+            </p>
+            
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="https://projekbutota.github.io/arena aya aya/" target="_blank" class="px-5 py-2.5 bg-white text-blue-700 font-bold text-xs rounded-xl shadow-md hover:bg-blue-50 transition flex items-center gap-2">
+                <i class="fa-solid fa-gamepad"></i> Coba Web Hub Live
+              </a>
+              <button onclick="navTo('portofolio')" class="px-5 py-2.5 bg-blue-800/60 hover:bg-blue-800 text-white font-semibold text-xs rounded-xl backdrop-blur-md border border-white/20 transition flex items-center gap-2">
+                <i class="fa-solid fa-file-pdf"></i> Baca Portofolio
+              </button>
+            </div>
+          </div>
+
+          <!-- REVISI 1: BADGE VISUAL MICROSOFT CERTIFIED EDUCATOR (MCE) -->
+          <div class="relative z-10 flex-shrink-0 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 flex flex-col items-center text-center shadow-lg">
+            <!-- Badge Icon Rendering -->
+            <div class="w-24 h-24 rounded-full bg-white border-4 border-blue-400 shadow-xl flex flex-col items-center justify-center relative p-2">
+              <div class="w-6 h-6 bg-blue-600 rounded-t-sm flex items-center justify-center text-[10px] text-white font-black mb-0.5">
+                <i class="fa-solid fa-certificate"></i>
+              </div>
+              <!-- Microsoft 4-Square Logo -->
+              <div class="grid grid-cols-2 gap-0.5 w-5 h-5 mb-1">
+                <div class="bg-[#F25022]"></div>
+                <div class="bg-[#7FBA00]"></div>
+                <div class="bg-[#00A4EF]"></div>
+                <div class="bg-[#FFB900]"></div>
+              </div>
+              <div class="text-[8px] font-extrabold text-slate-800 leading-none">MICROSOFT</div>
+              <div class="text-[7px] font-bold text-slate-500">CERTIFIED</div>
+              <div class="w-full bg-amber-400 text-slate-900 text-[8px] font-extrabold py-0.5 rounded mt-1">
+                MCE Educator
+              </div>
+            </div>
+            <div class="text-xs font-bold text-white mt-2">Certified Educator</div>
+            <div class="text-[10px] text-blue-200">Official Microsoft Credential</div>
+          </div>
+
+          <!-- Decorative Icon BG -->
+          <i class="fa-solid fa-atom absolute -right-10 -bottom-10 text-[220px] text-white/10 pointer-events-none"></i>
+        </div>
+
+        <!-- 3 Metric Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Capaian Mahir (Sumatif)</div>
+              <div class="text-2xl font-black text-slate-900 mt-1">45,31%</div>
+              <div class="text-xs text-emerald-600 font-bold mt-1 flex items-center gap-1">
+                <i class="fa-solid fa-arrow-up"></i> Naik dari 20,31% (Diagnostik)
+              </div>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl font-bold">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Murid Sasaran</div>
+              <div class="text-2xl font-black text-slate-900 mt-1">67 Murid</div>
+              <div class="text-xs text-blue-600 font-bold mt-1">
+                Kelas X.2 (35) & X.4 (32)
+              </div>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl font-bold">
+              <i class="fa-solid fa-users"></i>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex items-center justify-between">
+            <div>
+              <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Replikasi Sekolah</div>
+              <div class="text-2xl font-black text-slate-900 mt-1">3 SMAN</div>
+              <div class="text-xs text-purple-600 font-bold mt-1">
+                SMAN 2 Limboto, SMAN 1 Bilato, SMAN 1 Batudaa Pantai
+              </div>
+            </div>
+            <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center text-xl font-bold">
+              <i class="fa-solid fa-school"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Analytics Chart Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2 bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h3 class="font-bold text-slate-900 text-base">Perbandingan Asesmen Diagnostik vs Sumatif</h3>
+                <p class="text-xs text-slate-500">Distribusi Tingkat Penguasaan Materi Struktur Atom (64 Murid)</p>
+              </div>
+              <span class="text-xs bg-slate-100 px-3 py-1 rounded-full text-slate-600 font-semibold">Tahun 2026</span>
+            </div>
+            <div class="h-64">
+              <canvas id="chartAsesmen"></canvas>
+            </div>
+          </div>
+
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
+            <div>
+              <h3 class="font-bold text-slate-900 text-base mb-3">Filosofi ARENA AYA-AYA</h3>
+              <div class="space-y-3 text-xs text-slate-600">
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                  <strong class="text-blue-700">ARENA:</strong> Ruang bagi murid untuk berpartisipasi, menghadapi tantangan, dan menunjukkan pemahamannya.
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                  <strong class="text-indigo-700">AYA-AYA (Gorontalo):</strong> Alat penapis. Metafora proses menapis respons murid melalui pertanyaan game.
+                </div>
+              </div>
+            </div>
+            <a href="https://projekbutota.github.io/arena aya aya/" target="_blank" class="mt-4 w-full py-2.5 bg-slate-900 text-white rounded-xl text-xs font-bold text-center block hover:bg-slate-800 transition">
+              Jelajahi Ekosistem Game
+            </a>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= 2. SECTION PROFIL EDUCATOR ================= -->
+      <section id="sec-profil" class="space-y-6 hidden">
+        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 relative overflow-hidden">
+          <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+            <div class="w-28 h-28 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 text-white flex items-center justify-center text-3xl font-black shadow-lg shadow-blue-200 flex-shrink-0">
+              RD
+            </div>
+            
+            <div class="flex-1 text-center md:text-left">
+              <div class="flex flex-wrap items-center justify-center md:justify-start gap-2">
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900">Rahman Dunggio, S.Pd.</h2>
+                <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full">Educator Profile</span>
+              </div>
+              <p class="text-sm text-slate-600 font-semibold mt-1">
+                Wakasek Kurikulum | Guru Kimia & KKA (Koding dan Kecerdasan Artifisial)
+              </p>
+              <p class="text-xs text-slate-500 mt-1">
+                <i class="fa-solid fa-location-dot text-red-500 mr-1"></i> SMA Negeri 1 Tibawa, Kabupaten Gorontalo
+              </p>
+
+              <div class="flex flex-wrap gap-2 mt-4 justify-center md:justify-start text-xs">
+                <span class="bg-slate-100 text-slate-700 font-medium px-3 py-1 rounded-lg">
+                  <i class="fa-solid fa-user-tie text-blue-600 mr-1"></i> Wakasek Kurikulum
+                </span>
+                <span class="bg-slate-100 text-slate-700 font-medium px-3 py-1 rounded-lg">
+                  <i class="fa-solid fa-flask text-emerald-600 mr-1"></i> Guru Kimia & KKA
+                </span>
+                <span class="bg-slate-100 text-slate-700 font-medium px-3 py-1 rounded-lg">
+                  <i class="fa-solid fa-people-group text-purple-600 mr-1"></i> Ketua MGMP Kimia Kab. Gorontalo (2026-2029)
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Microsoft Elevate Educator Official Card -->
+        <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-6 text-white shadow-xl relative overflow-hidden border border-slate-700">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+            <div class="flex items-center gap-4">
+              <div class="grid grid-cols-2 gap-1 w-12 h-12 p-2 bg-white/10 rounded-xl backdrop-blur">
+                <div class="bg-[#F25022] rounded-sm"></div>
+                <div class="bg-[#7FBA00] rounded-sm"></div>
+                <div class="bg-[#00A4EF] rounded-sm"></div>
+                <div class="bg-[#FFB900] rounded-sm"></div>
+              </div>
+              <div>
+                <div class="text-xs text-amber-400 font-bold uppercase tracking-wider">Credential Resmi Global</div>
+                <h3 class="text-xl font-bold">Microsoft Elevate Educator (2026 - 2027) & MCE</h3>
+                <p class="text-xs text-slate-300 mt-0.5">Pengakuan resmi transformasi digital & integrasi AI dalam pembelajaran modern.</p>
+              </div>
+            </div>
+            <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-bold px-4 py-2 rounded-xl">
+              <i class="fa-solid fa-shield-check mr-1"></i> Terverifikasi Microsoft
+            </span>
+          </div>
+        </div>
+
+        <!-- Rekam Jejak Prestasi & Kejuaraan -->
+        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100">
+          <h3 class="text-lg font-bold text-slate-900 mb-6 flex items-center gap-2">
+            <i class="fa-solid fa-trophy text-amber-500"></i> Rekam Jejak Prestasi & Sertifikasi
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Finalis Apresiasi GTK 2025</h4>
+                <div class="text-xs text-amber-700 font-semibold mt-0.5">Tingkat Nasional</div>
+                <p class="text-xs text-slate-500 mt-1">Penghargaan prestisius atas inovasi karya pembelajaran di tingkat nasional.</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                <i class="fa-solid fa-copyright"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Pemegang HAKI Media Pembelajaran</h4>
+                <div class="text-xs text-blue-700 font-semibold mt-0.5">Kemenkumham RI (Tahun 2025)</div>
+                <p class="text-xs text-slate-500 mt-1">Hak Cipta resmi atas karya inovasi media pembelajaran berbasis teknologi digital.</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Peserta Bina Talenta Koding & KA</h4>
+                <div class="text-xs text-purple-700 font-semibold mt-0.5">Tahun 2025</div>
+                <p class="text-xs text-slate-500 mt-1">Pengembangan kapasitas tingkat lanjut bidang Koding dan Kecerdasan Artifisial (KA).</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100 flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-lg flex-shrink-0">
+                <i class="fa-solid fa-book-open-reader"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-sm text-slate-900">Pelatihan Pembelajaran Mendalam Batch 1</h4>
+                <div class="text-xs text-emerald-700 font-semibold mt-0.5">Guru SMA/SMK Tahun 2025</div>
+                <p class="text-xs text-slate-500 mt-1">Penerapan prinsip Mindful, Meaningful, & Joyful Learning dalam pembelajaran Kimia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Galeri Sertifikat -->
+        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100">
+          <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-certificate text-blue-600"></i> Galeri Sertifikat & Penghargaan
+          </h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div onclick="openModal('Sertifikat Microsoft Certified Educator (MCE)')" class="cursor-pointer border rounded-2xl p-4 bg-slate-50 hover:border-blue-500 transition text-center group">
+              <i class="fa-solid fa-certificate text-4xl text-blue-600 group-hover:scale-110 transition mb-2"></i>
+              <div class="text-xs font-bold text-slate-800">Microsoft Certified (MCE)</div>
+              <div class="text-[10px] text-slate-500">Certified Educator</div>
+            </div>
+            <div onclick="openModal('Sertifikat Finalis Apresiasi GTK 2025')" class="cursor-pointer border rounded-2xl p-4 bg-slate-50 hover:border-amber-500 transition text-center group">
+              <i class="fa-solid fa-file-certificate text-4xl text-amber-500 group-hover:scale-110 transition mb-2"></i>
+              <div class="text-xs font-bold text-slate-800">GTK Nasional 2025</div>
+              <div class="text-[10px] text-slate-500">Finalis Nasional</div>
+            </div>
+            <div onclick="openModal('Sertifikat HAKI Kemenkumham 2025')" class="cursor-pointer border rounded-2xl p-4 bg-slate-50 hover:border-purple-500 transition text-center group">
+              <i class="fa-solid fa-file-shield text-4xl text-purple-600 group-hover:scale-110 transition mb-2"></i>
+              <div class="text-xs font-bold text-slate-800">HAKI Media Pembelajaran</div>
+              <div class="text-[10px] text-slate-500">Kemenkumham 2025</div>
+            </div>
+            <div onclick="openModal('Sertifikat Pembelajaran Mendalam Batch 1')" class="cursor-pointer border rounded-2xl p-4 bg-slate-50 hover:border-emerald-500 transition text-center group">
+              <i class="fa-solid fa-file-signature text-4xl text-emerald-600 group-hover:scale-110 transition mb-2"></i>
+              <div class="text-xs font-bold text-slate-800">Pembelajaran Mendalam</div>
+              <div class="text-[10px] text-slate-500">Batch 1 SMA 2025</div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= 3. SECTION PORTOFOLIO UTAMA (REVISI 2: LIKE, SHARE, KOMENTAR) ================= -->
+      <section id="sec-portofolio" class="space-y-6 hidden">
+        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100">
+          <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
+            <div>
+              <span class="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full uppercase">Dokumen Utama Lomba</span>
+              <h2 class="text-2xl font-bold text-slate-900 mt-2">Portofolio Guru Kreatif Award 2026</h2>
+              <p class="text-xs text-slate-500 mt-1">Format PDF, 14 Halaman (Batas Maksimal 15 Halaman), Ukuran Berkas: 4.2 MB</p>
+            </div>
+            <a href="Portofolio_ARENA_AYA-AYA_Desain_Baru.pdf" download class="px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs rounded-xl shadow-md transition flex items-center gap-2">
+              <i class="fa-solid fa-download"></i> Unduh PDF Portofolio
+            </a>
+          </div>
+
+          <!-- Viewer Embed Frame -->
+          <div class="w-full h-[650px] border border-slate-200 rounded-2xl overflow-hidden bg-slate-100">
+            <iframe src="Portofolio_ARENA_AYA-AYA_Desain_Baru.pdf" class="w-full h-full"></iframe>
+          </div>
+
+          <!-- REVISI 2: INTERAKSI PORTOFOLIO (LIKE, SHARE, COMMENT TOOLBAR) -->
+          <div class="mt-8 pt-6 border-t border-slate-200 space-y-6">
+            
+            <!-- Toolbar Actions -->
+            <div class="flex flex-wrap items-center justify-between gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200">
+              <div class="flex items-center gap-3">
+                <button id="btnLikePortofolio" onclick="toggleLikePortofolio()" class="px-5 py-2.5 bg-white border border-slate-300 hover:border-red-500 hover:text-red-600 text-slate-700 font-bold text-xs rounded-xl shadow-sm transition flex items-center gap-2">
+                  <i id="iconLike" class="fa-regular fa-heart text-base text-red-500"></i>
+                  <span>Sukai Portofolio</span>
+                  <span id="countLike" class="bg-red-100 text-red-700 px-2 py-0.5 rounded-full text-[10px]">42</span>
+                </button>
+
+                <button onclick="sharePortofolio()" class="px-5 py-2.5 bg-white border border-slate-300 hover:border-blue-500 hover:text-blue-600 text-slate-700 font-bold text-xs rounded-xl shadow-sm transition flex items-center gap-2">
+                  <i class="fa-solid fa-share-nodes text-base text-blue-600"></i>
+                  <span>Bagikan Link</span>
+                </button>
+              </div>
+
+              <div id="toastShare" class="hidden text-xs font-bold text-emerald-600 bg-emerald-50 px-4 py-2 rounded-xl border border-emerald-200">
+                <i class="fa-solid fa-circle-check mr-1"></i> Tautan berhasil disalin!
+              </div>
+            </div>
+
+            <!-- Kolom Komentar & Apresiasi -->
+            <div class="space-y-4">
+              <h3 class="font-bold text-slate-900 text-base flex items-center gap-2">
+                <i class="fa-solid fa-comments text-blue-600"></i> Komentar & Apresiasi Pengunjung
+              </h3>
+
+              <!-- Input Form -->
+              <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-3">
+                <input type="text" id="inputNamaKomentar" placeholder="Nama Anda / Dewan Juri / Pengunjung..." class="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-blue-500">
+                <textarea id="inputTeksKomentar" rows="2" placeholder="Tuliskan komentar, pertanyaan, atau masukan untuk portofolio ini..." class="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-blue-500"></textarea>
+                <div class="flex justify-end">
+                  <button onclick="tambahKomentar()" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-xl shadow transition">
+                    <i class="fa-solid fa-paper-plane mr-1"></i> Kirim Komentar
+                  </button>
+                </div>
+              </div>
+
+              <!-- List Komentar -->
+              <div id="listKomentar" class="space-y-3 pt-2">
+                <div class="p-4 bg-white rounded-2xl border border-slate-100 shadow-sm text-xs space-y-1">
+                  <div class="flex items-center justify-between">
+                    <strong class="text-slate-900">Dr. Hamzah, M.Pd. (Pengawas SMA)</strong>
+                    <span class="text-[10px] text-slate-400">2 jam yang lalu</span>
+                  </div>
+                  <p class="text-slate-600 leading-relaxed">Inovasi ARENA AYA-AYA sangat komprehensif, mengintegrasikan kearifan lokal Gorontalo dengan teknologi AI. Data asesmennya sangat terukur!</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 4. SECTION ARTEFAK AI (REVISI 3: KOLOM REFLEKSI PENGUNJUNG) ================= -->
+      <section id="sec-artefak" class="space-y-6 hidden">
+        
+        <div class="bg-gradient-to-r from-indigo-900 to-slate-900 text-white p-6 md:p-8 rounded-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <span class="bg-indigo-500/30 text-indigo-300 border border-indigo-400/30 text-xs font-bold px-3 py-1 rounded-full uppercase">
+              Artifact AI Web Hub
+            </span>
+            <h2 class="text-2xl font-bold mt-2">Ekosistem 5 Game Interaktif ARENA AYA-AYA</h2>
+            <p class="text-xs text-slate-300 mt-1">
+              Seluruh game dihimpun dalam satu web hub berbasis AI-Generated Code & Interactive Flat Panel (IFP).
+            </p>
+          </div>
+          <a href="https://projekbutota.github.io/arena aya aya/" target="_blank" class="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl shadow-lg transition flex items-center gap-2 flex-shrink-0">
+            <i class="fa-solid fa-rocket"></i> Mainkan Semua Game Live
+          </a>
+        </div>
+
+        <!-- 5 Game Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl font-bold mb-4">
+                <i class="fa-solid fa-camera font-bold"></i>
+              </div>
+              <h3 class="font-bold text-base text-slate-900">1. Camera Interaktif</h3>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Kamera IFP mendeteksi posisi tubuh murid di area kelas untuk memilih jawaban Kimia secara real-time.
+              </p>
+            </div>
+            <a href="https://projekbutota.github.io/arena aya aya/" target="_blank" class="mt-6 w-full py-2.5 bg-blue-50 text-blue-600 hover:bg-blue-600 hover:text-white font-bold text-xs rounded-xl text-center block transition">
+              Buka Game Live <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center text-xl font-bold mb-4">
+                <i class="fa-solid fa-people-pull"></i>
+              </div>
+              <h3 class="font-bold text-base text-slate-900">2. Tug War (Tarik Tambang)</h3>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Kompetisi beregu (Tim Merah vs Biru) menjawab soal notasi atom untuk menarik tambang digital.
+              </p>
+            </div>
+            <a href="https://projekbutota.github.io/arena aya aya/" target="_blank" class="mt-6 w-full py-2.5 bg-red-50 text-red-600 hover:bg-red-600 hover:text-white font-bold text-xs rounded-xl text-center block transition">
+              Buka Game Live <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold mb-4">
+                <i class="fa-solid fa-staff-snake"></i>
+              </div>
+              <h3 class="font-bold text-base text-slate-900">3. Snake War</h3>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Mengendalikan ular digital sembari menjawab pertanyaan Kimia untuk menambah daya tarung tim.
+              </p>
+            </div>
+            <a href="https://projekbutota.github.io/arena aya aya/" target="_blank" class="mt-6 w-full py-2.5 bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white font-bold text-xs rounded-xl text-center block transition">
+              Buka Game Live <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl font-bold mb-4">
+                <i class="fa-solid fa-cubes"></i>
+              </div>
+              <h3 class="font-bold text-base text-slate-900">4. Tengge-Tengge</h3>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Adaptasi permainan tradisional Gorontalo ke dalam media interaktif berbasis tantangan konsep Kimia.
+              </p>
+            </div>
+            <a href="https://projekbutota.github.io/arena aya aya/" target="_blank" class="mt-6 w-full py-2.5 bg-amber-50 text-amber-600 hover:bg-amber-600 hover:text-white font-bold text-xs rounded-xl text-center block transition">
+              Buka Game Live <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+
+          <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between md:col-span-2 lg:col-span-1">
+            <div>
+              <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl font-bold mb-4">
+                <i class="fa-solid fa-hand-pointer"></i>
+              </div>
+              <h3 class="font-bold text-base text-slate-900">5. Drag & Drop Lab Konfigurasi</h3>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Simulasi interaktif menyusun elektron pada kulit atom Bohr dengan feedback instan bagi murid.
+              </p>
+            </div>
+            <a href="https://projekbutota.github.io/arena aya aya/" target="_blank" class="mt-6 w-full py-2.5 bg-purple-50 text-purple-600 hover:bg-purple-600 hover:text-white font-bold text-xs rounded-xl text-center block transition">
+              Buka Game Live <i class="fa-solid fa-arrow-right ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- REVISI 3: KOLOM REFLEKSI & MASUKAN PENGUNJUNG -->
+        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 space-y-6">
+          <div class="flex items-center justify-between border-b pb-4">
+            <div>
+              <h3 class="font-bold text-slate-900 text-lg flex items-center gap-2">
+                <i class="fa-solid fa-lightbulb text-amber-500"></i> Kolom Refleksi & Masukan Pengunjung
+              </h3>
+              <p class="text-xs text-slate-500 mt-0.5">Berikan ulasan, refleksi, atau saran untuk pengembangan media game pembelajaran ini.</p>
+            </div>
+          </div>
+
+          <!-- Form Input Refleksi -->
+          <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 space-y-3">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <input type="text" id="inputNamaRefleksi" placeholder="Nama Anda / Pengunjung..." class="px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-indigo-500">
+              <input type="text" id="inputPeranRefleksi" placeholder="Peran / Instansi (misal: Guru Kimia / Juri)..." class="px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-indigo-500">
+            </div>
+            <textarea id="inputTeksRefleksi" rows="3" placeholder="Tuliskan catatan refleksi atau saran perbaikan media..." class="w-full px-4 py-2.5 bg-white border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-indigo-500"></textarea>
+            <div class="flex justify-end">
+              <button onclick="tambahRefleksi()" class="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs rounded-xl shadow transition">
+                <i class="fa-solid fa-paper-plane mr-1"></i> Kirim Refleksi
+              </button>
+            </div>
+          </div>
+
+          <!-- Feed Refleksi Pengunjung -->
+          <div id="listRefleksi" class="space-y-4">
+            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs space-y-1">
+              <div class="flex items-center justify-between">
+                <div>
+                  <strong class="text-slate-900">Nurfadhilah, S.Pd.</strong>
+                  <span class="text-[10px] text-indigo-600 font-semibold ml-2">Guru SMAN 2 Limboto</span>
+                </div>
+                <span class="text-[10px] text-slate-400">Kemarin</span>
+              </div>
+              <p class="text-slate-600 leading-relaxed mt-1">"Game Tengge-Tengge sangat disukai murid di sekolah kami karena mengadaptasi budaya lokal Gorontalo secara menyenangkan!"</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= 5. SECTION VIDEO MEDIA (REVISI 4: FORMAT POTRET 9:16 UNTUK UTAMA) ================= -->
+      <section id="sec-video" class="space-y-6 hidden">
+        
+        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100">
+          <div class="mb-6">
+            <span class="bg-amber-500 text-white text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow">
+              ★ WAJIB DINILAI DEWAN JURI
+            </span>
+            <h2 class="text-xl font-bold text-slate-900 mt-2">Video Utama & Galeri Video Pendukung (Format Potret 9:16)</h2>
+            <p class="text-xs text-slate-500 mt-0.5">Sesuai Syarat Lomba: Durasi ≤ 5 Menit | Minimal 720p HD | Format Potret (Instagram Reels & TikTok)</p>
+          </div>
+
+          <!-- Grid Video Potret 9:16 -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            
+            <!-- REVISI 4: VIDEO UTAMA PENILAIAN (FORMAT POTRET 9:16) -->
+            <div class="border-2 border-amber-400 rounded-3xl p-4 bg-amber-50/50 flex flex-col items-center relative shadow-lg">
+              <div class="w-full aspect-[9/16] bg-slate-900 rounded-2xl overflow-hidden relative shadow flex items-center justify-center text-white border border-amber-300">
+                <i class="fa-solid fa-circle-play text-5xl text-amber-400 opacity-90 animate-pulse"></i>
+                <div class="absolute top-3 left-3 right-3 flex justify-between items-center text-[10px] font-bold">
+                  <span class="bg-amber-500 text-slate-900 px-2 py-0.5 rounded-full">UTAMA</span>
+                  <span class="bg-black/60 text-white px-2 py-0.5 rounded-full">&le; 5 Min</span>
+                </div>
+                <div class="absolute bottom-3 left-3 right-3 text-[11px] bg-black/70 backdrop-blur p-2.5 rounded-xl border border-white/20">
+                  <div class="font-bold text-amber-300">Video Utama Implementasi</div>
+                  <div class="text-[9px] text-slate-300">HD 1080p | Takarir Bahasa Indonesia</div>
+                </div>
+              </div>
+              <a href="https://instagram.com" target="_blank" class="mt-3 w-full py-2 bg-amber-500 hover:bg-amber-600 text-slate-900 font-extrabold text-xs rounded-xl text-center transition">
+                Tonton Video Utama (Reels) <i class="fa-solid fa-external-link ml-1"></i>
+              </a>
+            </div>
+
+            <!-- Video Pendukung 1 -->
+            <div class="border border-slate-200 rounded-3xl p-4 bg-slate-50 flex flex-col items-center">
+              <div class="w-full aspect-[9/16] bg-slate-800 rounded-2xl overflow-hidden relative shadow flex items-center justify-center text-white">
+                <i class="fa-brands fa-instagram text-4xl opacity-80"></i>
+                <div class="absolute bottom-3 left-3 right-3 text-[11px] bg-black/60 backdrop-blur p-2 rounded-xl">
+                  Keterlibatan Murid Kelas X.2
+                </div>
+              </div>
+              <a href="https://instagram.com" target="_blank" class="mt-3 text-xs font-bold text-pink-600 hover:underline flex items-center gap-1">
+                Tonton di Reels <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+
+            <!-- Video Pendukung 2 -->
+            <div class="border border-slate-200 rounded-3xl p-4 bg-slate-50 flex flex-col items-center">
+              <div class="w-full aspect-[9/16] bg-slate-800 rounded-2xl overflow-hidden relative shadow flex items-center justify-center text-white">
+                <i class="fa-brands fa-tiktok text-4xl opacity-80"></i>
+                <div class="absolute bottom-3 left-3 right-3 text-[11px] bg-black/60 backdrop-blur p-2 rounded-xl">
+                  Kamera IFP Gesture Game
+                </div>
+              </div>
+              <a href="https://tiktok.com" target="_blank" class="mt-3 text-xs font-bold text-slate-900 hover:underline flex items-center gap-1">
+                Tonton di TikTok <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+
+            <!-- Video Pendukung 3 -->
+            <div class="border border-slate-200 rounded-3xl p-4 bg-slate-50 flex flex-col items-center">
+              <div class="w-full aspect-[9/16] bg-slate-800 rounded-2xl overflow-hidden relative shadow flex items-center justify-center text-white">
+                <i class="fa-brands fa-instagram text-4xl opacity-80"></i>
+                <div class="absolute bottom-3 left-3 right-3 text-[11px] bg-black/60 backdrop-blur p-2 rounded-xl">
+                  Diseminasi MGMP Gorontalo
+                </div>
+              </div>
+              <a href="https://instagram.com" target="_blank" class="mt-3 text-xs font-bold text-pink-600 hover:underline flex items-center gap-1">
+                Tonton di Reels <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================= 6. SECTION DOKUMEN PENDUKUNG ================= -->
+      <section id="sec-dokumen" class="space-y-6 hidden">
+        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100">
+          <h2 class="text-xl font-bold text-slate-900 mb-2">Vault Evidence & Dokumen Pendukung</h2>
+          <p class="text-xs text-slate-500 mb-6">Seluruh berkas administrasi pembelajaran, data instrumen, dan rekapitulasi asesmen.</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 border border-slate-200 rounded-2xl flex items-center justify-between bg-slate-50 hover:border-blue-500 transition">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-file-pdf text-red-600 text-2xl"></i>
+                <div>
+                  <div class="font-bold text-xs text-slate-900">Modul Ajar Kimia Fase E - Struktur Atom</div>
+                  <div class="text-[10px] text-slate-500">RPP & Langkah Pembelajaran Mendalam</div>
+                </div>
+              </div>
+              <a href="#" class="px-3 py-1.5 bg-white text-blue-600 border border-slate-200 rounded-lg text-xs font-bold hover:bg-blue-50">Unduh</a>
+            </div>
+
+            <div class="p-4 border border-slate-200 rounded-2xl flex items-center justify-between bg-slate-50 hover:border-blue-500 transition">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-file-excel text-emerald-600 text-2xl"></i>
+                <div>
+                  <div class="font-bold text-xs text-slate-900">Rekapitulasi Asesmen Diagnostik & Sumatif</div>
+                  <div class="text-[10px] text-slate-500">Data Capaian 64 Murid (X.2 & X.4)</div>
+                </div>
+              </div>
+              <a href="#" class="px-3 py-1.5 bg-white text-blue-600 border border-slate-200 rounded-lg text-xs font-bold hover:bg-blue-50">Unduh</a>
+            </div>
+
+            <div class="p-4 border border-slate-200 rounded-2xl flex items-center justify-between bg-slate-50 hover:border-blue-500 transition">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-file-lines text-indigo-600 text-2xl"></i>
+                <div>
+                  <div class="font-bold text-xs text-slate-900">Instrumen Tes Diagnostik Kognitif</div>
+                  <div class="text-[10px] text-slate-500">Soal & Rubrik Penilaian Notasi Atom</div>
+                </div>
+              </div>
+              <a href="#" class="px-3 py-1.5 bg-white text-blue-600 border border-slate-200 rounded-lg text-xs font-bold hover:bg-blue-50">Unduh</a>
+            </div>
+
+            <div class="p-4 border border-slate-200 rounded-2xl flex items-center justify-between bg-slate-50 hover:border-blue-500 transition">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-file-signature text-purple-600 text-2xl"></i>
+                <div>
+                  <div class="font-bold text-xs text-slate-900">Surat Bukti Diseminasi & Replikasi</div>
+                  <div class="text-[10px] text-slate-500">MGMP Kimia Kabupaten Gorontalo</div>
+                </div>
+              </div>
+              <a href="#" class="px-3 py-1.5 bg-white text-blue-600 border border-slate-200 rounded-lg text-xs font-bold hover:bg-blue-50">Unduh</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 7. SECTION DOKUMENTASI FOTO (REVISI 5: KETERANGAN & DESKRIPSI SIKAT) ================= -->
+      <section id="sec-dokumentasi" class="space-y-6 hidden">
+        <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100">
+          <h2 class="text-xl font-bold text-slate-900 mb-2">Dokumentasi Foto Pembelajaran & Replikasi</h2>
+          <p class="text-xs text-slate-500 mb-6">Dokumentasi aktivitas kelas interaktif berbantuan Interactive Flat Panel (IFP) dan diseminasi MGMP.</p>
+
+          <!-- Grid Foto dengan Deskripsi Lengkap -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Foto 1 -->
+            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between">
+              <div>
+                <div onclick="openModal('Foto 1: Deteksi Kamera IFP Kelas X.2')" class="aspect-video bg-slate-700 flex items-center justify-center text-white cursor-pointer relative group">
+                  <i class="fa-solid fa-camera text-4xl opacity-50"></i>
+                  <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
+                    <span class="bg-black/60 text-white text-xs px-3 py-1 rounded-full backdrop-blur">Klik Pratinjau Foto</span>
+                  </div>
+                </div>
+                <div class="p-5 space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="bg-blue-100 text-blue-700 font-bold px-2.5 py-0.5 rounded-full">Kelas X.2</span>
+                    <span class="text-slate-400 font-semibold">September 2026</span>
+                  </div>
+                  <h4 class="font-bold text-slate-900 text-sm">Penggunaan Camera Interaktif pada IFP</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Murid kelas X.2 berdiri pada area jawaban yang ditentukan di depan layar Interactive Flat Panel. Kamera mendeteksi posisi tubuh murid secara otomatis untuk menapis jawaban benar atau tereliminasi secara real-time.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Foto 2 -->
+            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between">
+              <div>
+                <div onclick="openModal('Foto 2: Tarik Tambang Digital Kelas X.4')" class="aspect-video bg-slate-700 flex items-center justify-center text-white cursor-pointer relative group">
+                  <i class="fa-solid fa-people-pull text-4xl opacity-50"></i>
+                  <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
+                    <span class="bg-black/60 text-white text-xs px-3 py-1 rounded-full backdrop-blur">Klik Pratinjau Foto</span>
+                  </div>
+                </div>
+                <div class="p-5 space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="bg-red-100 text-red-700 font-bold px-2.5 py-0.5 rounded-full">Kelas X.4</span>
+                    <span class="text-slate-400 font-semibold">Oktober 2026</span>
+                  </div>
+                  <h4 class="font-bold text-slate-900 text-sm">Kompetisi Beregu Game Tug War Digital</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Tim Merah dan Biru berkompetisi dalam permainan tarik tambang digital. Setiap jawaban benar tentang notasi atom menghasilkan daya tarikan digital untuk mengalahkan tim lawan.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Foto 3 -->
+            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between">
+              <div>
+                <div onclick="openModal('Foto 3: Diseminasi MGMP Kimia')" class="aspect-video bg-slate-700 flex items-center justify-center text-white cursor-pointer relative group">
+                  <i class="fa-solid fa-chalkboard-user text-4xl opacity-50"></i>
+                  <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
+                    <span class="bg-black/60 text-white text-xs px-3 py-1 rounded-full backdrop-blur">Klik Pratinjau Foto</span>
+                  </div>
+                </div>
+                <div class="p-5 space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="bg-purple-100 text-purple-700 font-bold px-2.5 py-0.5 rounded-full">MGMP Kimia</span>
+                    <span class="text-slate-400 font-semibold">Oktober 2026</span>
+                  </div>
+                  <h4 class="font-bold text-slate-900 text-sm">Diseminasi Inovasi kepada Rekan Guru MGMP</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Kegiatan berbagi praktik baik pengembangan game berbasis Google Gemini & GitHub kepada guru Kimia se-Kabupaten Gorontalo. Inovasi ini telah berhasil direplikasi di 3 SMAN lainnya.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Foto 4 -->
+            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between">
+              <div>
+                <div onclick="openModal('Foto 4: Lab Konfigurasi Elektron')" class="aspect-video bg-slate-700 flex items-center justify-center text-white cursor-pointer relative group">
+                  <i class="fa-solid fa-atom text-4xl opacity-50"></i>
+                  <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
+                    <span class="bg-black/60 text-white text-xs px-3 py-1 rounded-full backdrop-blur">Klik Pratinjau Foto</span>
+                  </div>
+                </div>
+                <div class="p-5 space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="bg-emerald-100 text-emerald-700 font-bold px-2.5 py-0.5 rounded-full">Lab Interaktif</span>
+                    <span class="text-slate-400 font-semibold">Oktober 2026</span>
+                  </div>
+                  <h4 class="font-bold text-slate-900 text-sm">Aktivitas Drag & Drop Konfigurasi Bohr</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Murid melakukan simulasi menyusun distribusi elektron pada lintasan kulit K, L, M, N model atom Bohr dengan umpan balik otomatis dari sistem media ARENA AYA-AYA.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- ================= MODAL VIEWER POPUP ================= -->
+  <div id="modalViewer" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+    <div class="bg-white rounded-3xl p-6 max-w-lg w-full shadow-2xl space-y-4">
+      <div class="flex items-center justify-between border-b pb-3">
+        <h3 id="modalTitle" class="font-bold text-slate-900 text-base">Pratinjau Berkas</h3>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 text-xl font-bold">&times;</button>
+      </div>
+      <div class="py-8 text-center text-slate-500">
+        <i class="fa-solid fa-certificate text-6xl text-blue-600 mb-3"></i>
+        <p id="modalDesc" class="text-xs">Menampilkan detail berkas sertifikat...</p>
+      </div>
+      <button onclick="closeModal()" class="w-full py-2.5 bg-slate-900 text-white rounded-xl text-xs font-bold">Tutup Pratinjau</button>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPT INTERAKTIF SPA & REVISI HANDLERS ================= -->
+  <script>
+    // Navigation SPA Function
+    function navTo(secId) {
+      const sections = ['beranda', 'profil', 'portofolio', 'artefak', 'video', 'dokumen', 'dokumentasi'];
+      sections.forEach(s => {
+        const el = document.getElementById('sec-' + s);
+        if(el) el.classList.add('hidden');
+        
+        const nav = document.getElementById('nav-' + s);
+        if(nav) nav.classList.remove('active');
+      });
+
+      const targetSec = document.getElementById('sec-' + secId);
+      if(targetSec) targetSec.classList.remove('hidden');
+
+      const targetNav = document.getElementById('nav-' + secId);
+      if(targetNav) targetNav.classList.add('active');
+    }
+
+    // Modal Popup Handler
+    function openModal(title) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDesc').innerText = 'Dokumen resmi / dokumentasi terverifikasi: ' + title;
+      document.getElementById('modalViewer').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('modalViewer').classList.add('hidden');
+    }
+
+    // REVISI 2: LIKE & SHARE & KOMENTAR PORTOFOLIO HANDLER
+    let liked = false;
+    let likesCount = 42;
+
+    function toggleLikePortofolio() {
+      const icon = document.getElementById('iconLike');
+      const count = document.getElementById('countLike');
+      liked = !liked;
+      if (liked) {
+        likesCount++;
+        icon.classList.remove('fa-regular');
+        icon.classList.add('fa-solid');
+      } else {
+        likesCount--;
+        icon.classList.remove('fa-solid');
+        icon.classList.add('fa-regular');
+      }
+      count.innerText = likesCount;
+    }
+
+    function sharePortofolio() {
+      navigator.clipboard.writeText(window.location.href);
+      const toast = document.getElementById('toastShare');
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 3000);
+    }
+
+    function tambahKomentar() {
+      const nama = document.getElementById('inputNamaKomentar').value.trim();
+      const teks = document.getElementById('inputTeksKomentar').value.trim();
+      if (!nama || !teks) return alert('Silakan isi Nama dan Komentar terlebih dahulu.');
+
+      const list = document.getElementById('listKomentar');
+      const item = document.createElement('div');
+      item.className = 'p-4 bg-white rounded-2xl border border-slate-100 shadow-sm text-xs space-y-1 animate-fadeIn';
+      item.innerHTML = `
+        <div class="flex items-center justify-between">
+          <strong class="text-slate-900">${nama}</strong>
+          <span class="text-[10px] text-slate-400">Baru saja</span>
+        </div>
+        <p class="text-slate-600 leading-relaxed">${teks}</p>
+      `;
+      list.prepend(item);
+      document.getElementById('inputNamaKomentar').value = '';
+      document.getElementById('inputTeksKomentar').value = '';
+    }
+
+    // REVISI 3: REFLEKSI HANDLER
+    function tambahRefleksi() {
+      const nama = document.getElementById('inputNamaRefleksi').value.trim();
+      const peran = document.getElementById('inputPeranRefleksi').value.trim() || 'Pengunjung Web';
+      const teks = document.getElementById('inputTeksRefleksi').value.trim();
+      if (!nama || !teks) return alert('Silakan isi Nama dan Catatan Refleksi.');
+
+      const list = document.getElementById('listRefleksi');
+      const item = document.createElement('div');
+      item.className = 'p-4 bg-slate-50 rounded-2xl border border-slate-200 text-xs space-y-1 animate-fadeIn';
+      item.innerHTML = `
+        <div class="flex items-center justify-between">
+          <div>
+            <strong class="text-slate-900">${nama}</strong>
+            <span class="text-[10px] text-indigo-600 font-semibold ml-2">${peran}</span>
+          </div>
+          <span class="text-[10px] text-slate-400">Baru saja</span>
+        </div>
+        <p class="text-slate-600 leading-relaxed mt-1">"${teks}"</p>
+      `;
+      list.prepend(item);
+      document.getElementById('inputNamaRefleksi').value = '';
+      document.getElementById('inputPeranRefleksi').value = '';
+      document.getElementById('inputTeksRefleksi').value = '';
+    }
+
+    // Initialize Chart.js on Load
+    window.addEventListener('DOMContentLoaded', () => {
+      const ctx = document.getElementById('chartAsesmen').getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Mahir', 'Sedang', 'Perlu Bimbingan'],
+          datasets: [
+            {
+              label: 'Diagnostik Awal (%)',
+              data: [20.31, 46.88, 32.81],
+              backgroundColor: '#CBD5E1',
+              borderRadius: 8
+            },
+            {
+              label: 'Sumatif Akhir (%)',
+              data: [45.31, 39.06, 12.50],
+              backgroundColor: '#2563EB',
+              borderRadius: 8
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'top' }
+          },
+          scales: {
+            y: { beginAtZero: true, max: 60 }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
