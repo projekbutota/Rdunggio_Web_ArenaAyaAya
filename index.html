@@ -134,7 +134,7 @@
           <i class="fa-regular fa-comment-dots text-sm"></i>
         </button>
 
-        <!-- User Profile Pill Header Terhubung dengan assets/images/profil.png -->
+        <!-- User Profile Pill Header -->
         <div class="flex items-center gap-3 pl-3 border-l border-slate-200">
           <img src="assets/images/profil.png" alt="Rahman Dunggio" class="w-9 h-9 rounded-xl object-cover shadow-sm border border-slate-200">
           <div class="hidden sm:block text-left">
@@ -151,7 +151,7 @@
       <!-- ================= 1. SECTION BERANDA ================= -->
       <section id="sec-beranda" class="space-y-6">
         
-        <!-- Hero Banner Hook Utama + BADGE MICROSOFT TERHUBUNG DENGAN assets/images/microsoft.png -->
+        <!-- Hero Banner Hook Utama -->
         <div class="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 rounded-3xl p-6 md:p-8 text-white relative overflow-hidden shadow-xl shadow-blue-200 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
           
           <div class="max-w-2xl relative z-10">
@@ -181,7 +181,7 @@
             </div>
           </div>
 
-          <!-- BADGE GAMBAR GAMBAR ASLI MICROSOFT -->
+          <!-- BADGE GAMBAR MICROSOFT -->
           <div class="relative z-10 flex-shrink-0 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 flex flex-col items-center text-center shadow-lg">
             <img src="assets/images/microsoft.png" alt="Microsoft Certified Educator" class="w-24 h-24 object-contain drop-shadow-md">
             <div class="text-xs font-bold text-white mt-2">Microsoft Educator</div>
@@ -269,11 +269,10 @@
 
       </section>
 
-      <!-- ================= 2. SECTION PROFIL EDUCATOR ================= -->
+      <!-- ================= 2. SECTION PROFIL EDUCATOR (KHUSUS SERTIFIKAT) ================= -->
       <section id="sec-profil" class="space-y-6 hidden">
         <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 relative overflow-hidden">
           <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
-            <!-- FOTO PROFIL ASLI ASSETS/IMAGES/PROFIL.PNG -->
             <img src="assets/images/profil.png" alt="Rahman Dunggio, S.Pd." class="w-28 h-28 rounded-2xl object-cover shadow-lg shadow-blue-200 flex-shrink-0 border-2 border-slate-100">
             
             <div class="flex-1 text-center md:text-left">
@@ -303,7 +302,7 @@
           </div>
         </div>
 
-        <!-- Microsoft Elevate Educator Official Card -->
+        <!-- Card Microsoft Elevate Educator -->
         <div class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-6 text-white shadow-xl relative overflow-hidden border border-slate-700">
           <div class="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
             <div class="flex items-center gap-4">
@@ -315,7 +314,7 @@
               </div>
             </div>
             <a href="assets/docs/Microsoft ElevateSertifikat.pdf" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-4 py-2 rounded-xl transition flex items-center gap-2">
-              <i class="fa-solid fa-shield-check"></i> Lihat Sertifikat PDF
+              <i class="fa-solid fa-file-pdf"></i> Lihat Sertifikat PDF
             </a>
           </div>
         </div>
@@ -373,57 +372,61 @@
           </div>
         </div>
 
-        <!-- Galeri Sertifikat (Langsung Terhubung dengan Berkas PDF di Folder assets/docs/) -->
+        <!-- GALERI SERTIFIKAT MURNI DI PROFIL (4 SERTIFIKAT KANONIKAL) -->
         <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100">
           <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
-            <i class="fa-solid fa-certificate text-blue-600"></i> Galeri Sertifikat & Berkas PDF
+            <i class="fa-solid fa-certificate text-blue-600"></i> Galeri Sertifikat Prestasi Educator
           </h3>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             
-            <a href="assets/docs/Microsoft ElevateSertifikat.pdf" target="_blank" class="border rounded-2xl p-4 bg-slate-50 hover:border-blue-500 transition text-center group block">
+            <!-- 1. Sertifikat Microsoft -->
+            <a href="assets/docs/Microsoft ElevateSertifikat.pdf" target="_blank" class="border border-slate-200 rounded-2xl p-4 bg-slate-50 hover:border-blue-500 hover:shadow-md transition text-center group block">
               <i class="fa-solid fa-file-pdf text-4xl text-blue-600 group-hover:scale-110 transition mb-2"></i>
               <div class="text-xs font-bold text-slate-800">Microsoft Elevate</div>
-              <div class="text-[10px] text-blue-600 mt-1">Buka PDF <i class="fa-solid fa-external-link"></i></div>
+              <div class="text-[10px] text-blue-600 mt-1 font-semibold">Buka PDF <i class="fa-solid fa-external-link"></i></div>
             </a>
 
-            <a href="assets/docs/Portofolio_ARENA_AYA-AYA.pdf" target="_blank" class="border rounded-2xl p-4 bg-slate-50 hover:border-red-500 transition text-center group block">
-              <i class="fa-solid fa-file-pdf text-4xl text-red-600 group-hover:scale-110 transition mb-2"></i>
-              <div class="text-xs font-bold text-slate-800">Portofolio Lomba</div>
-              <div class="text-[10px] text-red-600 mt-1">Buka PDF <i class="fa-solid fa-external-link"></i></div>
+            <!-- 2. Sertifikat GTK 2025 -->
+            <a href="assets/docs/Sertifikat Apresiasi GTK tingkat Nasional.pdf" target="_blank" class="border border-slate-200 rounded-2xl p-4 bg-slate-50 hover:border-amber-500 hover:shadow-md transition text-center group block">
+              <i class="fa-solid fa-file-pdf text-4xl text-amber-500 group-hover:scale-110 transition mb-2"></i>
+              <div class="text-xs font-bold text-slate-800">Finalis GTK Nasional</div>
+              <div class="text-[10px] text-amber-600 mt-1 font-semibold">Buka PDF <i class="fa-solid fa-external-link"></i></div>
             </a>
 
-            <div onclick="openModal('Sertifikat Apresiasi GTK 2025')" class="cursor-pointer border rounded-2xl p-4 bg-slate-50 hover:border-amber-500 transition text-center group">
-              <i class="fa-solid fa-file-certificate text-4xl text-amber-500 group-hover:scale-110 transition mb-2"></i>
-              <div class="text-xs font-bold text-slate-800">GTK Nasional 2025</div>
-              <div class="text-[10px] text-slate-500">Finalis Nasional</div>
-            </div>
+            <!-- 3. Sertifikat HAKI -->
+            <a href="assets/docs/Sertifikat Hak cipta media pembelajaran.pdf" target="_blank" class="border border-slate-200 rounded-2xl p-4 bg-slate-50 hover:border-purple-500 hover:shadow-md transition text-center group block">
+              <i class="fa-solid fa-file-pdf text-4xl text-purple-600 group-hover:scale-110 transition mb-2"></i>
+              <div class="text-xs font-bold text-slate-800">HAKI Media Pembelajaran</div>
+              <div class="text-[10px] text-purple-600 mt-1 font-semibold">Buka PDF <i class="fa-solid fa-external-link"></i></div>
+            </a>
 
-            <div onclick="openModal('Sertifikat HAKI Kemenkumham 2025')" class="cursor-pointer border rounded-2xl p-4 bg-slate-50 hover:border-purple-500 transition text-center group">
-              <i class="fa-solid fa-file-shield text-4xl text-purple-600 group-hover:scale-110 transition mb-2"></i>
-              <div class="text-xs font-bold text-slate-800">HAKI Media</div>
-              <div class="text-[10px] text-slate-500">Kemenkumham 2025</div>
-            </div>
+            <!-- 4. Sertifikat Pembelajaran Mendalam -->
+            <a href="assets/docs/Sertifikat Pembelajaran Mendalam Batch 1.pdf" target="_blank" class="border border-slate-200 rounded-2xl p-4 bg-slate-50 hover:border-emerald-500 hover:shadow-md transition text-center group block">
+              <i class="fa-solid fa-file-pdf text-4xl text-emerald-600 group-hover:scale-110 transition mb-2"></i>
+              <div class="text-xs font-bold text-slate-800">Pembelajaran Mendalam</div>
+              <div class="text-[10px] text-emerald-600 mt-1 font-semibold">Buka PDF <i class="fa-solid fa-external-link"></i></div>
+            </a>
 
           </div>
         </div>
 
       </section>
 
-      <!-- ================= 3. SECTION PORTOFOLIO UTAMA (TERHUBUNG assets/docs/Portofolio_ARENA_AYA-AYA.pdf) ================= -->
+      <!-- ================= 3. SECTION PORTOFOLIO UTAMA (TERPISAH DI MENU PORTOFOLIO) ================= -->
       <section id="sec-portofolio" class="space-y-6 hidden">
         <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100">
           <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
             <div>
               <span class="bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full uppercase">Dokumen Utama Lomba</span>
               <h2 class="text-2xl font-bold text-slate-900 mt-2">Portofolio Guru Kreatif Award 2026</h2>
-              <p class="text-xs text-slate-500 mt-1">File: assets/docs/Portofolio_ARENA_AYA-AYA.pdf</p>
+              <p class="text-xs text-slate-500 mt-1">Berkas Resmi: assets/docs/Portofolio_ARENA_AYA-AYA.pdf</p>
             </div>
             <a href="assets/docs/Portofolio_ARENA_AYA-AYA.pdf" download class="px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs rounded-xl shadow-md transition flex items-center gap-2">
               <i class="fa-solid fa-download"></i> Unduh PDF Portofolio
             </a>
           </div>
 
-          <!-- Viewer Embed Frame Terhubung Langsung -->
+          <!-- Viewer Embed Frame -->
           <div class="w-full h-[650px] border border-slate-200 rounded-2xl overflow-hidden bg-slate-100">
             <iframe src="assets/docs/Portofolio_ARENA_AYA-AYA.pdf" class="w-full h-full"></iframe>
           </div>
@@ -684,11 +687,11 @@
         </div>
       </section>
 
-      <!-- ================= 6. SECTION DOKUMEN PENDUKUNG (TERHUBUNG FILE ASSETS/DOCS) ================= -->
+      <!-- ================= 6. SECTION DOKUMEN PENDUKUNG (VAULT EVIDENCES ADMINISTRASI) ================= -->
       <section id="sec-dokumen" class="space-y-6 hidden">
         <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100">
           <h2 class="text-xl font-bold text-slate-900 mb-2">Vault Evidence & Dokumen Pendukung</h2>
-          <p class="text-xs text-slate-500 mb-6">Seluruh berkas PDF pendukung yang tersimpan di repositori.</p>
+          <p class="text-xs text-slate-500 mb-6">Seluruh berkas administrasi pembelajaran, data instrumen, dan rekapitulasi asesmen.</p>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             
@@ -696,22 +699,44 @@
               <div class="flex items-center gap-3">
                 <i class="fa-solid fa-file-pdf text-red-600 text-2xl"></i>
                 <div>
-                  <div class="font-bold text-xs text-slate-900">Portofolio Lomba ARENA AYA-AYA</div>
-                  <div class="text-[10px] text-slate-500">Portofolio_ARENA_AYA-AYA.pdf</div>
+                  <div class="font-bold text-xs text-slate-900">Modul Ajar Kimia Fase E - Struktur Atom</div>
+                  <div class="text-[10px] text-slate-500">RPP & Langkah Pembelajaran Mendalam</div>
                 </div>
               </div>
-              <a href="assets/docs/Portofolio_ARENA_AYA-AYA.pdf" target="_blank" class="px-3 py-1.5 bg-white text-blue-600 border border-slate-200 rounded-lg text-xs font-bold hover:bg-blue-50">Unduh PDF</a>
+              <a href="assets/docs/Modul_Ajar_Kimia.pdf" download class="px-3 py-1.5 bg-white text-blue-600 border border-slate-200 rounded-lg text-xs font-bold hover:bg-blue-50">Unduh Berkas</a>
             </div>
 
             <div class="p-4 border border-slate-200 rounded-2xl flex items-center justify-between bg-slate-50 hover:border-blue-500 transition">
               <div class="flex items-center gap-3">
-                <i class="fa-solid fa-file-pdf text-blue-600 text-2xl"></i>
+                <i class="fa-solid fa-file-excel text-emerald-600 text-2xl"></i>
                 <div>
-                  <div class="font-bold text-xs text-slate-900">Sertifikat Microsoft Elevate</div>
-                  <div class="text-[10px] text-slate-500">Microsoft ElevateSertifikat.pdf</div>
+                  <div class="font-bold text-xs text-slate-900">Rekapitulasi Asesmen Diagnostik & Sumatif</div>
+                  <div class="text-[10px] text-slate-500">Data Capaian 64 Murid (X.2 & X.4)</div>
                 </div>
               </div>
-              <a href="assets/docs/Microsoft ElevateSertifikat.pdf" target="_blank" class="px-3 py-1.5 bg-white text-blue-600 border border-slate-200 rounded-lg text-xs font-bold hover:bg-blue-50">Unduh PDF</a>
+              <a href="assets/docs/Rekap_Asesmen.pdf" download class="px-3 py-1.5 bg-white text-blue-600 border border-slate-200 rounded-lg text-xs font-bold hover:bg-blue-50">Unduh Berkas</a>
+            </div>
+
+            <div class="p-4 border border-slate-200 rounded-2xl flex items-center justify-between bg-slate-50 hover:border-blue-500 transition">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-file-lines text-indigo-600 text-2xl"></i>
+                <div>
+                  <div class="font-bold text-xs text-slate-900">Instrumen Tes Diagnostik Kognitif</div>
+                  <div class="text-[10px] text-slate-500">Soal & Rubrik Penilaian Notasi Atom</div>
+                </div>
+              </div>
+              <a href="assets/docs/Instrumen_Tes.pdf" download class="px-3 py-1.5 bg-white text-blue-600 border border-slate-200 rounded-lg text-xs font-bold hover:bg-blue-50">Unduh Berkas</a>
+            </div>
+
+            <div class="p-4 border border-slate-200 rounded-2xl flex items-center justify-between bg-slate-50 hover:border-blue-500 transition">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-file-signature text-purple-600 text-2xl"></i>
+                <div>
+                  <div class="font-bold text-xs text-slate-900">Surat Bukti Diseminasi & Replikasi</div>
+                  <div class="text-[10px] text-slate-500">MGMP Kimia Kabupaten Gorontalo</div>
+                </div>
+              </div>
+              <a href="assets/docs/Surat_Diseminasi_MGMP.pdf" download class="px-3 py-1.5 bg-white text-blue-600 border border-slate-200 rounded-lg text-xs font-bold hover:bg-blue-50">Unduh Berkas</a>
             </div>
 
           </div>
@@ -782,7 +807,7 @@
       </div>
       <div class="py-8 text-center text-slate-500">
         <i class="fa-solid fa-certificate text-6xl text-blue-600 mb-3"></i>
-        <p id="modalDesc" class="text-xs">Menampilkan detail berkas sertifikat...</p>
+        <p id="modalDesc" class="text-xs">Menampilkan detail berkas...</p>
       </div>
       <button onclick="closeModal()" class="w-full py-2.5 bg-slate-900 text-white rounded-xl text-xs font-bold">Tutup Pratinjau</button>
     </div>
@@ -809,7 +834,7 @@
 
     function openModal(title) {
       document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalDesc').innerText = 'Dokumen resmi terverifikasi: ' + title;
+      document.getElementById('modalDesc').innerText = 'Dokumen terverifikasi: ' + title;
       document.getElementById('modalViewer').classList.remove('hidden');
     }
 
