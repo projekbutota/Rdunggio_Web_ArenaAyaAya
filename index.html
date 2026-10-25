@@ -269,7 +269,7 @@
 
       </section>
 
-      <!-- ================= 2. SECTION PROFIL EDUCATOR (KHUSUS SERTIFIKAT) ================= -->
+      <!-- ================= 2. SECTION PROFIL EDUCATOR ================= -->
       <section id="sec-profil" class="space-y-6 hidden">
         <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100 relative overflow-hidden">
           <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
@@ -479,7 +479,7 @@
         </div>
       </section>
 
-      <!-- ================= 4. SECTION ARTEFAK AI (5 GAME HUB LENGKAP TAUTAN) ================= -->
+      <!-- ================= 4. SECTION ARTEFAK AI (5 GAME HUB) ================= -->
       <section id="sec-artefak" class="space-y-6 hidden">
         
         <div class="bg-gradient-to-r from-indigo-900 to-slate-900 text-white p-6 md:p-8 rounded-3xl shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
@@ -497,10 +497,9 @@
           </a>
         </div>
 
-        <!-- 5 Game Cards Grid dengan Link Resmi Masing-Masing -->
+        <!-- 5 Game Cards Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
-          <!-- 1. Game Camera -->
           <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
             <div>
               <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl font-bold mb-4">
@@ -516,7 +515,6 @@
             </a>
           </div>
 
-          <!-- 2. Game Tug of War -->
           <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
             <div>
               <div class="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center text-xl font-bold mb-4">
@@ -532,7 +530,6 @@
             </a>
           </div>
 
-          <!-- 3. Game Snake War -->
           <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
             <div>
               <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold mb-4">
@@ -548,7 +545,6 @@
             </a>
           </div>
 
-          <!-- 4. Game Tengge-Tengge -->
           <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
             <div>
               <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl font-bold mb-4">
@@ -564,7 +560,6 @@
             </a>
           </div>
 
-          <!-- 5. Game Drag and Drop -->
           <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between md:col-span-2 lg:col-span-1">
             <div>
               <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl font-bold mb-4">
@@ -622,7 +617,7 @@
 
       </section>
 
-      <!-- ================= 5. SECTION VIDEO MEDIA (POTRET 9:16) ================= -->
+      <!-- ================= 5. SECTION VIDEO MEDIA ================= -->
       <section id="sec-video" class="space-y-6 hidden">
         <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100">
           <div class="mb-6">
@@ -746,54 +741,238 @@
         </div>
       </section>
 
-      <!-- ================= 7. SECTION DOKUMENTASI FOTO ================= -->
+      <!-- ================= 7. SECTION DOKUMENTASI FOTO (INTEGRASI 11 FOTO UPLOAD) ================= -->
       <section id="sec-dokumentasi" class="space-y-6 hidden">
         <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-100">
-          <h2 class="text-xl font-bold text-slate-900 mb-2">Dokumentasi Foto Pembelajaran & Replikasi</h2>
-          <p class="text-xs text-slate-500 mb-6">Dokumentasi aktivitas kelas interaktif berbantuan Interactive Flat Panel (IFP).</p>
+          <div class="mb-6">
+            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full uppercase">Galeri Evidence Foto</span>
+            <h2 class="text-xl font-bold text-slate-900 mt-2">Dokumentasi Foto Pembelajaran, Asesmen & Inovasi</h2>
+            <p class="text-xs text-slate-500 mt-0.5">Seluruh rekaman bukti pelaksanaan kegiatan asesmen, uji coba game, pembelajaran berbantuan IFP, hingga pencapaian credential.</p>
+          </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between">
+          <!-- Grid 11 Foto Dokumentasi Asli dari Upload -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- 1. Dokumentasi Asesmen diagnostik awal -->
+            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between shadow-sm hover:shadow-md transition">
               <div>
-                <div onclick="openModal('Foto 1: Deteksi Kamera IFP Kelas X.2')" class="aspect-video bg-slate-700 flex items-center justify-center text-white cursor-pointer relative group">
-                  <i class="fa-solid fa-camera text-4xl opacity-50"></i>
+                <div onclick="openImageModal('assets/images/Dokumentasi Asesmen diagnostik awal.jpeg', 'Asesmen Diagnostik Awal')" class="h-48 bg-slate-200 overflow-hidden cursor-pointer relative group">
+                  <img src="assets/images/Dokumentasi Asesmen diagnostik awal.jpeg" alt="Asesmen Diagnostik Awal" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Dokumentasi+Asesmen+Diagnostik+Awal'">
                   <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
-                    <span class="bg-black/60 text-white text-xs px-3 py-1 rounded-full backdrop-blur">Klik Pratinjau Foto</span>
+                    <span class="bg-black/60 text-white text-[11px] px-3 py-1 rounded-full backdrop-blur"><i class="fa-solid fa-expand mr-1"></i> Perbesar Foto</span>
                   </div>
                 </div>
                 <div class="p-5 space-y-2">
                   <div class="flex items-center justify-between text-xs">
-                    <span class="bg-blue-100 text-blue-700 font-bold px-2.5 py-0.5 rounded-full">Kelas X.2</span>
-                    <span class="text-slate-400 font-semibold">September 2026</span>
+                    <span class="bg-blue-100 text-blue-700 font-bold px-2.5 py-0.5 rounded-full">Evaluasi Awal</span>
+                    <span class="text-slate-400 font-semibold">Diagnostik</span>
                   </div>
-                  <h4 class="font-bold text-slate-900 text-sm">Penggunaan Camera Interaktif pada IFP</h4>
+                  <h4 class="font-bold text-slate-900 text-sm">Dokumentasi Asesmen Diagnostik Awal</h4>
                   <p class="text-xs text-slate-600 leading-relaxed">
-                    Murid kelas X.2 berdiri pada area jawaban yang ditentukan di depan layar Interactive Flat Panel. Kamera mendeteksi posisi tubuh murid secara otomatis.
+                    Pelaksanaan tes diagnostik kognitif awal untuk memetakan kesiapan dan tingkat pemahaman dasar murid sebelum penerapan media ARENA AYA-AYA.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between">
+            <!-- 2. Dokumentasi Asesmen sumatif kelas X.4 -->
+            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between shadow-sm hover:shadow-md transition">
               <div>
-                <div onclick="openModal('Foto 2: Tarik Tambang Digital Kelas X.4')" class="aspect-video bg-slate-700 flex items-center justify-center text-white cursor-pointer relative group">
-                  <i class="fa-solid fa-people-pull text-4xl opacity-50"></i>
+                <div onclick="openImageModal('assets/images/Dokumentasi Asesmen sumatif kelas X.4.jpeg', 'Asesmen Sumatif Kelas X.4')" class="h-48 bg-slate-200 overflow-hidden cursor-pointer relative group">
+                  <img src="assets/images/Dokumentasi Asesmen sumatif kelas X.4.jpeg" alt="Asesmen Sumatif Kelas X.4" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Dokumentasi+Asesmen+Sumatif+Kelas+X.4'">
                   <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
-                    <span class="bg-black/60 text-white text-xs px-3 py-1 rounded-full backdrop-blur">Klik Pratinjau Foto</span>
+                    <span class="bg-black/60 text-white text-[11px] px-3 py-1 rounded-full backdrop-blur"><i class="fa-solid fa-expand mr-1"></i> Perbesar Foto</span>
                   </div>
                 </div>
                 <div class="p-5 space-y-2">
                   <div class="flex items-center justify-between text-xs">
-                    <span class="bg-red-100 text-red-700 font-bold px-2.5 py-0.5 rounded-full">Kelas X.4</span>
-                    <span class="text-slate-400 font-semibold">Oktober 2026</span>
+                    <span class="bg-emerald-100 text-emerald-700 font-bold px-2.5 py-0.5 rounded-full">Kelas X.4</span>
+                    <span class="text-slate-400 font-semibold">Sumatif</span>
                   </div>
-                  <h4 class="font-bold text-slate-900 text-sm">Kompetisi Beregu Game Tug War Digital</h4>
+                  <h4 class="font-bold text-slate-900 text-sm">Dokumentasi Asesmen Sumatif Kelas X.4</h4>
                   <p class="text-xs text-slate-600 leading-relaxed">
-                    Tim Merah dan Biru berkompetisi dalam permainan tarik tambang digital untuk menguji konsep notasi atom.
+                    Proses evaluasi sumatif akhir pada murid kelas X.4 guna mengukur peningkatan penguasaan konsep Notasi Atom pasca intervensi game.
                   </p>
                 </div>
               </div>
             </div>
+
+            <!-- 3. Dokumentasi Asesmen sumatif -->
+            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+              <div>
+                <div onclick="openImageModal('assets/images/Dokumentasi Asesmen sumatif.jpeg', 'Pelaksanaan Asesmen Sumatif')" class="h-48 bg-slate-200 overflow-hidden cursor-pointer relative group">
+                  <img src="assets/images/Dokumentasi Asesmen sumatif.jpeg" alt="Pelaksanaan Asesmen Sumatif" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Dokumentasi+Asesmen+Sumatif'">
+                  <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
+                    <span class="bg-black/60 text-white text-[11px] px-3 py-1 rounded-full backdrop-blur"><i class="fa-solid fa-expand mr-1"></i> Perbesar Foto</span>
+                  </div>
+                </div>
+                <div class="p-5 space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="bg-indigo-100 text-indigo-700 font-bold px-2.5 py-0.5 rounded-full">Evaluasi Akhir</span>
+                    <span class="text-slate-400 font-semibold">Capaian</span>
+                  </div>
+                  <h4 class="font-bold text-slate-900 text-sm">Pelaksanaan Asesmen Sumatif</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Pengambilan data ketuntasan belajar murid secara menyeluruh yang membuktikan peningkatan capaian mahir dari 20,31% menjadi 45,31%.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Dokumentasi asesmen diagnostik awal kelas lain -->
+            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+              <div>
+                <div onclick="openImageModal('assets/images/Dokumentasi asesmen diagnostik awal kelas lain.jpeg', 'Asesmen Diagnostik Kelas Replikasi')" class="h-48 bg-slate-200 overflow-hidden cursor-pointer relative group">
+                  <img src="assets/images/Dokumentasi asesmen diagnostik awal kelas lain.jpeg" alt="Asesmen Diagnostik Kelas Replikasi" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Dokumentasi+Asesmen+Diagnostik+Kelas+Lain'">
+                  <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
+                    <span class="bg-black/60 text-white text-[11px] px-3 py-1 rounded-full backdrop-blur"><i class="fa-solid fa-expand mr-1"></i> Perbesar Foto</span>
+                  </div>
+                </div>
+                <div class="p-5 space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="bg-purple-100 text-purple-700 font-bold px-2.5 py-0.5 rounded-full">Replikasi Kelas</span>
+                    <span class="text-slate-400 font-semibold">Baseline</span>
+                  </div>
+                  <h4 class="font-bold text-slate-900 text-sm">Asesmen Diagnostik Kelas Replikasi</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Pengambilan data pemahaman awal murid di kelas sasaran diseminasi/replikasi sebagai perbandingan objektivitas hasil inovasi.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Dokumentasi pembelajaran di lab kimia -->
+            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+              <div>
+                <div onclick="openImageModal('assets/images/Dokumentasi pembelajaran di lab kimia.jpeg', 'Pembelajaran di Lab Kimia')" class="h-48 bg-slate-200 overflow-hidden cursor-pointer relative group">
+                  <img src="assets/images/Dokumentasi pembelajaran di lab kimia.jpeg" alt="Pembelajaran di Lab Kimia" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Pembelajaran+di+Lab+Kimia'">
+                  <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
+                    <span class="bg-black/60 text-white text-[11px] px-3 py-1 rounded-full backdrop-blur"><i class="fa-solid fa-expand mr-1"></i> Perbesar Foto</span>
+                  </div>
+                </div>
+                <div class="p-5 space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="bg-emerald-100 text-emerald-700 font-bold px-2.5 py-0.5 rounded-full">Lab Kimia</span>
+                    <span class="text-slate-400 font-semibold">Praktikum</span>
+                  </div>
+                  <h4 class="font-bold text-slate-900 text-sm">Pembelajaran Interaktif di Lab Kimia</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Suasana aktivitas eksplorasi praktikum murid di Laboratorium Kimia SMAN 1 Tibawa dengan mengombinasikan eksperimen dan media digital.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Dokumentasi pembelajaran di labkimia tanpa IFP -->
+            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+              <div>
+                <div onclick="openImageModal('assets/images/Dokumentasi pembelajaran di labkimia tanpa IFP.jpeg', 'Pembelajaran Lab Tanpa IFP')" class="h-48 bg-slate-200 overflow-hidden cursor-pointer relative group">
+                  <img src="assets/images/Dokumentasi pembelajaran di labkimia tanpa IFP.jpeg" alt="Pembelajaran Lab Tanpa IFP" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Pembelajaran+Tanpa+IFP'">
+                  <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
+                    <span class="bg-black/60 text-white text-[11px] px-3 py-1 rounded-full backdrop-blur"><i class="fa-solid fa-expand mr-1"></i> Perbesar Foto</span>
+                  </div>
+                </div>
+                <div class="p-5 space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="bg-amber-100 text-amber-700 font-bold px-2.5 py-0.5 rounded-full">Kondisi Kontrol</span>
+                    <span class="text-slate-400 font-semibold">Pra-Inovasi</span>
+                  </div>
+                  <h4 class="font-bold text-slate-900 text-sm">Pembelajaran Lab Kimia Tanpa IFP</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Gambaran suasana pembelajaran di lab kimia sebelum terintegrasikannya Interactive Flat Panel (IFP) sebagai bahan studi pembanding efektivitas.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 7. Dokumentasi pembelajaran konvensional kimia -->
+            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+              <div>
+                <div onclick="openImageModal('assets/images/Dokumentasi pembelajaran konvensional kimia.jpeg', 'Pembelajaran Konvensional')" class="h-48 bg-slate-200 overflow-hidden cursor-pointer relative group">
+                  <img src="assets/images/Dokumentasi pembelajaran konvensional kimia.jpeg" alt="Pembelajaran Konvensional" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Pembelajaran+Konvensional+Kimia'">
+                  <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
+                    <span class="bg-black/60 text-white text-[11px] px-3 py-1 rounded-full backdrop-blur"><i class="fa-solid fa-expand mr-1"></i> Perbesar Foto</span>
+                  </div>
+                </div>
+                <div class="p-5 space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="bg-slate-200 text-slate-700 font-bold px-2.5 py-0.5 rounded-full">Metode Lama</span>
+                    <span class="text-slate-400 font-semibold">Baseline</span>
+                  </div>
+                  <h4 class="font-bold text-slate-900 text-sm">Pembelajaran Konvensional Kimia</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Dokumentasi metode pengajaran teori konvensional sebelum dikembangkannya filosofi AYA-AYA dan media game berbasis AI.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 8. Dokumentasi pembelajaran menggunakan IFP -->
+            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+              <div>
+                <div onclick="openImageModal('assets/images/Dokumentasi pembelajaran menggunakan IFP.jpeg', 'Pembelajaran Menggunakan IFP')" class="h-48 bg-slate-200 overflow-hidden cursor-pointer relative group">
+                  <img src="assets/images/Dokumentasi pembelajaran menggunakan IFP.jpeg" alt="Pembelajaran Menggunakan IFP" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Pembelajaran+Menggunakan+IFP'">
+                  <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
+                    <span class="bg-black/60 text-white text-[11px] px-3 py-1 rounded-full backdrop-blur"><i class="fa-solid fa-expand mr-1"></i> Perbesar Foto</span>
+                  </div>
+                </div>
+                <div class="p-5 space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="bg-blue-100 text-blue-700 font-bold px-2.5 py-0.5 rounded-full">Inovasi IFP</span>
+                    <span class="text-slate-400 font-semibold">Interaktif</span>
+                  </div>
+                  <h4 class="font-bold text-slate-900 text-sm">Pembelajaran Berbantuan IFP</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Antusiasme murid saat berinteraksi langsung di depan layar Interactive Flat Panel (IFP) memainkan simulasi game Kimia.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 9. Dokumentasi saat dapat Badge Microsoft Expert -->
+            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+              <div>
+                <div onclick="openImageModal('assets/images/Dokumentasi saat dapat Badge Microsoft Expert.jpeg', 'Penerimaan Badge Microsoft')" class="h-48 bg-slate-200 overflow-hidden cursor-pointer relative group">
+                  <img src="assets/images/Dokumentasi saat dapat Badge Microsoft Expert.jpeg" alt="Penerimaan Badge Microsoft" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Penerimaan+Badge+Microsoft'">
+                  <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
+                    <span class="bg-black/60 text-white text-[11px] px-3 py-1 rounded-full backdrop-blur"><i class="fa-solid fa-expand mr-1"></i> Perbesar Foto</span>
+                  </div>
+                </div>
+                <div class="p-5 space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="bg-amber-100 text-amber-800 font-bold px-2.5 py-0.5 rounded-full">Microsoft Credential</span>
+                    <span class="text-slate-400 font-semibold">Sertifikasi</span>
+                  </div>
+                  <h4 class="font-bold text-slate-900 text-sm">Penerimaan Badge Microsoft Certified</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Momen penerimaan sertifikasi dan badge resmi dari Microsoft sebagai bentuk pengakuan kompetensi pendidik digital berstandar global.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 10. Dokumentasi uji coba game -->
+            <div class="border border-slate-200 rounded-3xl overflow-hidden bg-slate-50 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+              <div>
+                <div onclick="openImageModal('assets/images/Dokumentasi uji coba game.jpeg', 'Uji Coba Game Interaktif')" class="h-48 bg-slate-200 overflow-hidden cursor-pointer relative group">
+                  <img src="assets/images/Dokumentasi uji coba game.jpeg" alt="Uji Coba Game Interaktif" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://via.placeholder.com/600x400?text=Uji+Coba+Game+Interaktif'">
+                  <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition flex items-center justify-center">
+                    <span class="bg-black/60 text-white text-[11px] px-3 py-1 rounded-full backdrop-blur"><i class="fa-solid fa-expand mr-1"></i> Perbesar Foto</span>
+                  </div>
+                </div>
+                <div class="p-5 space-y-2">
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="bg-indigo-100 text-indigo-700 font-bold px-2.5 py-0.5 rounded-full">Simulasi Game</span>
+                    <span class="text-slate-400 font-semibold">Uji Coba</span>
+                  </div>
+                  <h4 class="font-bold text-slate-900 text-sm">Uji Coba Game Interaktif ARENA AYA-AYA</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Sesi gladi dan simulasi teknis 5 game interaktif bersama murid untuk memastikan mekanisme permainan berjalan lancar sebelum digunakan saat asesmen.
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -801,16 +980,15 @@
     </main>
   </div>
 
-  <!-- MODAL VIEWER POPUP -->
-  <div id="modalViewer" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
-    <div class="bg-white rounded-3xl p-6 max-w-lg w-full shadow-2xl space-y-4">
+  <!-- MODAL VIEWER POPUP UNTUK DOKUMEN & FOTO -->
+  <div id="modalViewer" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+    <div class="bg-white rounded-3xl p-6 max-w-2xl w-full shadow-2xl space-y-4">
       <div class="flex items-center justify-between border-b pb-3">
-        <h3 id="modalTitle" class="font-bold text-slate-900 text-base">Pratinjau Berkas</h3>
+        <h3 id="modalTitle" class="font-bold text-slate-900 text-base">Pratinjau Foto Dokumentasi</h3>
         <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 text-xl font-bold">&times;</button>
       </div>
-      <div class="py-8 text-center text-slate-500">
-        <i class="fa-solid fa-certificate text-6xl text-blue-600 mb-3"></i>
-        <p id="modalDesc" class="text-xs">Menampilkan detail berkas...</p>
+      <div id="modalContent" class="py-2 text-center">
+        <img id="modalImage" src="" alt="" class="max-h-[70vh] mx-auto rounded-2xl object-contain shadow-md">
       </div>
       <button onclick="closeModal()" class="w-full py-2.5 bg-slate-900 text-white rounded-xl text-xs font-bold">Tutup Pratinjau</button>
     </div>
@@ -835,9 +1013,9 @@
       if(targetNav) targetNav.classList.add('active');
     }
 
-    function openModal(title) {
+    function openImageModal(imgSrc, title) {
       document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalDesc').innerText = 'Dokumen terverifikasi: ' + title;
+      document.getElementById('modalImage').src = imgSrc;
       document.getElementById('modalViewer').classList.remove('hidden');
     }
 
